@@ -1,0 +1,6 @@
+Package: SonarSysArenaCore
+Type: Package
+Title: SonarSysArenaCore
+Version: 0.1.0
+License: MIT
+Description: Build an R toolkit that studies arena behavior through layout fixtures, with stable geometry snapshots and local-only command execution.
