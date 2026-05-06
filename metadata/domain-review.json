@@ -1,0 +1,73 @@
+{
+  "repo": "sonar-sys-arena-core",
+  "language": "R",
+  "category": "Systems programming",
+  "goal": "Build an R toolkit that studies arena behavior through layout fixtures, with stable geometry snapshots and local-only command execution.",
+  "review_model": {
+    "terms": [
+      "allocation pressure",
+      "dirty state",
+      "guard slack",
+      "layout drift"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "allocation pressure",
+      "signal": 71,
+      "slack": 22,
+      "drag": 26,
+      "confidence": 67,
+      "score": 153,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "dirty state",
+      "signal": 57,
+      "slack": 31,
+      "drag": 27,
+      "confidence": 63,
+      "score": 127,
+      "lane": "watch"
+    },
+    {
+      "name": "edge",
+      "focus": "guard slack",
+      "signal": 83,
+      "slack": 27,
+      "drag": 12,
+      "confidence": 49,
+      "score": 206,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "layout drift",
+      "signal": 69,
+      "slack": 40,
+      "drag": 8,
+      "confidence": 46,
+      "score": 200,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "allocation pressure",
+      "signal": 54,
+      "slack": 47,
+      "drag": 14,
+      "confidence": 45,
+      "score": 158,
+      "lane": "ship"
+    }
+  ]
+}
