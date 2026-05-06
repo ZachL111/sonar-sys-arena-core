@@ -1,0 +1,32 @@
+{
+  "index": 347,
+  "phase": 2,
+  "batch": 39,
+  "name": "sonar-sys-arena-core",
+  "planned_name": "sonar-sys-arena-core",
+  "language": "R",
+  "category": "Systems programming",
+  "goal": "Build an R toolkit that studies arena behavior through layout fixtures, with stable geometry snapshots and local-only command execution.",
+  "repository_url": "https://github.com/ZachL111/sonar-sys-arena-core",
+  "verification_command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify.ps1",
+  "model": {
+    "inputs": [
+      "demand",
+      "capacity",
+      "latency",
+      "risk",
+      "weight"
+    ],
+    "threshold": 182,
+    "risk_penalty": 6,
+    "latency_penalty": 2,
+    "weight_bonus": 6,
+    "decision_rule": "accept when score is greater than or equal to threshold, otherwise review"
+  },
+  "quality_gates": [
+    "readme constraint scan",
+    "fixture presence check",
+    "metadata JSON parse",
+    "language verifier"
+  ]
+}
